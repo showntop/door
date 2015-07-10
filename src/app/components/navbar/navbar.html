@@ -1,0 +1,37 @@
+<nav class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container-fluid">
+
+    <div class="navbar-header">
+      <a class="navbar-brand" href="https://github.com/Swiip/generator-gulp-angular">
+        <span class="glyphicon glyphicon-home"></span> Gulp Angular
+      </a>
+    </div>
+
+    <div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a ng-href="#">Home</a></li>
+        <li><a ng-href="#">About</a></li>
+        <li><a ng-href="#">Contact</a></li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <!-- start: User Dropdown -->
+        <li class="btn-group" dropdown ng-if="$root.global.isLogin">
+          <a class="btn dropdown-toggle btn-navbar" dropdown-toggle>
+            <i class="halflings-icon white user"></i> {{$root.global.user.login}}
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#"><i class="halflings-icon user"></i> 我的信息</a></li>
+            <li><a href="login.html"><i class="halflings-icon off"></i> 退出</a></li>
+          </ul>
+        </li>
+
+        <!-- end: User Dropdown -->
+        <li ng-if="!$root.global.isLogin"><a ui-sref="login">登录/注册</a></li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
